@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Reader;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.util.Scanner;
@@ -25,8 +26,10 @@ public class WordOccJava {
 		      Scanner sc = new Scanner(System.in);
 		      System.out.println("Enter the word to be Searched");
 		      String wrd=sc.nextLine();
-		      
-		       String out="C:\\Users\\prsus\\eclipse-workspace\\MavenProjExe\\output\\ouut.txt";
+		     String out="C:\\Users\\prsus\\eclipse-workspace\\MavenProjExe\\output\\ouut.txt";
+		     File file = new File(out);
+		      FileWriter fw = new FileWriter(file);
+		BufferedWriter bw = new BufferedWriter(fw);
 		       
 		      while((s=bfr.readLine())!=null)   
 		      {
@@ -41,17 +44,19 @@ public class WordOccJava {
 		          }
 		          if(s.contains(wrd))
 					{
-		        	 
-		        	 File file = new File(out);
-		       FileWriter fw = new FileWriter(file);
-		BufferedWriter bw = new BufferedWriter(fw);
+		        	  System.out.println(s);
+		        	
+		        	
+		        
+		
 		  bw.write(s);
-		bw.close();
-		       System.out.println(s);
+		
+		       
 					}
 		    		
 						
 					}
+		      bw.close();
 		      
 		      if(cnt==0)  
 		      {
